@@ -1,6 +1,6 @@
 import express from "express"
 import morgan from "morgan"
-import pkg from "../package.json" assert { type: "json" }
+import pkg from "../package.json"
 // import productRoutes from './routes/products.routes'
 import authRoutes from './routes/auth.routes.js'
 import userRoutes from "./routes/user.routes.js"
