@@ -1,0 +1,21 @@
+---------------
+COSAS QUE HACER
+---------------
+
+GENERAL
+-Crear una cuenta de gmail
+	·EMAIL: massfitnessproject@gmail.com
+	·PASSWPRD: $2b$10$LioDIcXDVWFONyw5nf3gVub8NeX9qM64Mq7Te.YCDsIJMUZN0Htl.
+-Correccion de errores (try catch etc...) [X]
+-Hacer la conexión de la base de datos de mongo Atlas i subirlo al host web 
+-Averiguar como hacer peticiones en javascript a la api [X]
+-Hacer el x-access-token dinámico
+
+ADMIN
+-Update byid [Cuando haces el update de la contraseña que se cifre] X
+-Delete byid X
+
+
+USER
+-Resetear Contraseña []
+-Detectar si esta logeado con el token

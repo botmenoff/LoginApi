@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Display Users</title>
+</head>
+<body>
+
+
+    <div id="section1">
+        <table id="displayTable">
+            <thead>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Mail</th>
+                <th>Passwd</th>
+                <th>Role</th>
+                <th>CreatedAt</th>
+                <th>UpdatedAt</th>
+            </thead>
+        </table>
+    </div>
+    <div id="section2">
+        <button id="reloadTable"> Reload Table</button>
+        <div id="createUser">
+            <form>
+                <input type="text" id="name" placeholder="Name">
+                <input type="email" id="emai" placeholder="Email">
+                <input type="password" id="passwd" placeholder="Password">
+                <input type="password" id="cpasswd" placeholder="Password Confirmation">
+                <select id="rol">
+                    <option value="admin">Admin</option>
+                    <option value="">User</option>
+                </select>
+            </form>
+            <button id="createUser">Create User</button>
+        </div>
+    </div>
+    <script src="./index.js" type="module"></script>
+</body>
+</html>
