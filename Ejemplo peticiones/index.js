@@ -1,5 +1,5 @@
 //VARIABLES
-const API_URL = "http://127.0.0.1:3000/api/"
+const API_URL = "https://mongodb-lo0u.onrender.com/api"
 const xhr = new XMLHttpRequest();
 const jsonWebTocken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzE4ODZiMzkwZTEzMDViODRlOWZjMSIsImlhdCI6MTY3MzYyNzc1NSwiZXhwIjoxNjczNzE0MTU1fQ.Y0O_3aCCGNF0Nd21WbB14uPjbHEEARhOMH01uAKenOo'
 const reloadButn = document.getElementById('reloadTable')

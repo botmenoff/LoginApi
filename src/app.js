@@ -1,11 +1,11 @@
 import express from "express"
 import morgan from "morgan"
 import pkg from "../package.json"
-import productRoutes from './routes/products.routes'
+// import productRoutes from './routes/products.routes'
 import authRoutes from './routes/auth.routes'
 import userRoutes from "./routes/user.routes"
 import { createRoles } from "./libs/inicio"
-import connection from './database'
+// import connection from './database'
 import emailRoutes from './routes/mail.routes'
 
 const db = require('./database')
