@@ -47,4 +47,6 @@ app.use((req, res, next) => {
 app.use('/api',authRoutes)
 app.use('/api',userRoutes)
 app.use('/api',emailRoutes)
+app.listen(3000);
+console.log("Server listening on port ",3000);
 export default app;

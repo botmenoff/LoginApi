@@ -2,12 +2,12 @@
   "name": "login-0.0",
   "version": "0.0.1",
   "description": "Authentification Api",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src --out-dir dist",
-    "dev": "nodemon src/index.js --exec babel-node",
-    "start": "node build/index.js"
+    "dev": "nodemon src/app.js --exec babel-node",
+    "start": "node build/app.js"
   },
   "author": "Ferran",
   "license": "ISC",
