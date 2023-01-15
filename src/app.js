@@ -1,6 +1,6 @@
 import express from "express"
 import morgan from "morgan"
-import pkg from "../package.json" assert { type: "json" }
+//import pkg from "../package.json" assert { type: "json" }
 // import productRoutes from './routes/products.routes'
 import authRoutes from './routes/auth.routes.js'
 import userRoutes from "./routes/user.routes.js"
@@ -16,17 +16,17 @@ createRoles();
 
 app.use(express.json())
 //seteamos una variable
-app.set('pkg',pkg)
+//app.set('pkg',pkg)
 //devuelve las peticiones que se hacen
 app.use(morgan('dev'))
 //ruta raiz
-app.get('/', (req,res) => {
-    res.json({
-        name: app.get('pkg').name,
-        author: app.get('pkg').author,
-        version: app.get('pkg').version
-    })
-})
+// app.get('/', (req,res) => {
+//     res.json({
+//         name: app.get('pkg').name,
+//         author: app.get('pkg').author,
+//         version: app.get('pkg').version
+//     })
+// })
 
 // connection.createConnection()
 
