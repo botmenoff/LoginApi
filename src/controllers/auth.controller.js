@@ -1,8 +1,8 @@
-import User from '../models/users'
+import User from '../models/users.js'
 import jwt from "jsonwebtoken"
-import config from '../config'
-import Role from '../models/role'
-const bcrypt = require('bcrypt');
+import config from '../config.js'
+import Role from '../models/role.js'
+import bcrypt from 'bcrypt'
 
 const signUp = async (req,res) => {
     try {
@@ -82,9 +82,11 @@ const resetpasswd = async (req,res) => {
     const userRepository = ""
 }
 
-module.exports = {
+const functions = {
     getUsers,
     sigIn,
     signUp,
     resetpasswd
 }
+
+export default functions

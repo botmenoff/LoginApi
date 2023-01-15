@@ -1,7 +1,7 @@
 import { Router } from "express";
 const router = Router()
-import * as authCtrl from '../controllers/auth.controller'
-import middlewares from '../middlewares/middleWare'
+import authCtrl from '../controllers/auth.controller.js'
+import middlewares from '../middlewares/middleWare.js'
 
 router.post('/signIn', authCtrl.sigIn)
     .post('/signUp', middlewares.validateLogin, authCtrl.signUp)

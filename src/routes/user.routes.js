@@ -1,7 +1,7 @@
 import { Router } from "express";
 const router = Router()
-import userController from '../controllers/user.controller'
-import middlewares from '../middlewares/middleWare'
+import userController from '../controllers/user.controller.js'
+import middlewares from '../middlewares/middleWare.js'
 
 
 router.post('/user/new', middlewares.verifyToken, middlewares.checkRoles, middlewares.isAdmin, userController.createUser)

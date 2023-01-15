@@ -1,9 +1,9 @@
-const Joi = require("joi")
+import Joi from 'joi'
 import jwt from 'jsonwebtoken'
-import config from '../config'
-import User from '../models/users'
-import Role from '../models/role'
-import { ROLES } from "../models/role";
+import config from '../config.js'
+import User from '../models/users.js'
+import Role from '../models/role.js'
+import { ROLES } from "../models/role.js";
 
 function validateLogin (req, res, next) {
     const name = req.body.name
@@ -101,10 +101,12 @@ const checkRoles = (req,res,next) => {
     next();
 }
 
-module.exports = {
+const functions = {
     validateLogin,
     verifyToken,
     isModerator,
     isAdmin,
     checkRoles
 }
+
+export default functions

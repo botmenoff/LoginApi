@@ -1,4 +1,4 @@
-import Product from '../models/products'
+import Product from '../models/products.js'
 
 export const createProduct = async (req,res) => {
     const {name,category,price,imgURL}= req.body

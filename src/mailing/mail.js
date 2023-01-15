@@ -1,5 +1,7 @@
+// import { func } from 'joi'
+
 //Testeando el envio de emails
-const nodemailer = require('nodemailer')
+import nodemailer from 'nodemailer'
 
 const sendEmail = async (req,res) => {
   const transporter = nodemailer.createTransport({
@@ -28,6 +30,8 @@ const sendEmail = async (req,res) => {
   })
 }
 
-module.exports = {
+const functions = {
   sendEmail
 }
+
+export default functions

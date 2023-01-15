@@ -1,6 +1,6 @@
 //Para poner un rol por defecto
 
-import role from "../models/role"
+import role from "../models/role.js"
 
 export const createRoles = async () => {
     try {

@@ -1,7 +1,7 @@
-import User from '../models/users'
+import User from '../models/users.js'
 import jwt from "jsonwebtoken"
-import config from '../config'
-import Role from '../models/role'
+import config from '../config.js'
+import Role from '../models/role.js'
 
 const createUser = async (req,res) => {
     //Misma funcion que en el auth.controller.signUp [LLAMAR A ESA FUNCION EN VEZ DE VOLVERLA A HACER]
@@ -79,10 +79,12 @@ const deleteUserById = async (req,res) => {
     
 }
 
-module.exports = {
+const functions = {
     createUser,
     getAllUsers,
     getUserById,
     updateUserById,
     deleteUserById
 }
+
+export default functions

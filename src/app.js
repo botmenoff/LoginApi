@@ -1,15 +1,15 @@
 import express from "express"
 import morgan from "morgan"
-import pkg from "../package.json"
+import pkg from "../package.json" assert { type: "json" }
 // import productRoutes from './routes/products.routes'
-import authRoutes from './routes/auth.routes'
-import userRoutes from "./routes/user.routes"
-import { createRoles } from "./libs/inicio"
+import authRoutes from './routes/auth.routes.js'
+import userRoutes from "./routes/user.routes.js"
+import { createRoles } from "./libs/inicio.js"
 // import connection from './database'
-import emailRoutes from './routes/mail.routes'
+import emailRoutes from './routes/mail.routes.js'
 
-const db = require('./database')
-db.createConnection()
+import db from './database.js'
+db()
 const app = express();
 //Creamos los roles para que ya existan
 createRoles();
