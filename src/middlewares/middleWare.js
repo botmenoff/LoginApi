@@ -101,12 +101,37 @@ const checkRoles = (req,res,next) => {
     next();
 }
 
+const checkNewUser = (req,res,next) => {
+    if (verifyUsername(req.body.name) == true && verifyEmail(req.body) == true && req.body.passwd === req.body.cpasswd && verifyPass(req.body.passwd) ) {
+        next()
+    } else {
+        res.status(404).send({"Error": "Verifica tus inputs"})
+    }
+}
+
+function verifyUsername(username) {
+    const regex = /^[a-zA-Z0-9]+$/
+    return regex.test(username)
+}
+
+function verifyEmail(email) {
+    const regex = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/
+    return regex.test(email)
+}
+
+function verifyPass(passwd) {
+    
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+    return regex.test(passwd)
+}
+
 const functions = {
     validateLogin,
     verifyToken,
     isModerator,
     isAdmin,
-    checkRoles
+    checkRoles,
+    checkNewUser
 }
 
 export default functions

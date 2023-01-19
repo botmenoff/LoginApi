@@ -1,7 +1,7 @@
 //VARIABLES
-const API_URL = "https://mongodb-lo0u.onrender.com/api"
+const API_URL = "https://loginapi-g1kd.onrender.com/api"
 const xhr = new XMLHttpRequest();
-const jsonWebTocken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzE4ODZiMzkwZTEzMDViODRlOWZjMSIsImlhdCI6MTY3MzYyNzc1NSwiZXhwIjoxNjczNzE0MTU1fQ.Y0O_3aCCGNF0Nd21WbB14uPjbHEEARhOMH01uAKenOo'
+const jsonWebTocken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzE5ZjM3Y2FhODI4NGU4ZGU3ZDBlMSIsImlhdCI6MTY3MzgwMTU5NiwiZXhwIjoxNjczODg3OTk2fQ.DhOjh2sHwi-ZJBD2U0_IE0HV_7lRbLkhQwJEwEnySbQ'
 const reloadButn = document.getElementById('reloadTable')
 const createButn = document.getElementById('createUser')
 
