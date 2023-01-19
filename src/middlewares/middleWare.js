@@ -85,7 +85,6 @@ const isAdmin = async (req, res, next) => {
 }
 
 const checkRoles = (req,res,next) => {
-    console.log("ROLES:"+req.body.name);
     if (Array.isArray(req.body.roles)) {
         //Si no existe el rol le mandamos un mensaje que no existe
         for (let i = 0; i < req.body.roles.length; i++) {
@@ -102,6 +101,7 @@ const checkRoles = (req,res,next) => {
 }
 
 const checkNewUser = (req,res,next) => {
+    console.log(req.body);
     let name = req.body.name
     let mail = req.body.mail
     let passwd = req.body.passwd
