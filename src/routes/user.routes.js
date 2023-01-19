@@ -4,7 +4,7 @@ import userController from '../controllers/user.controller.js'
 import middlewares from '../middlewares/middleWare.js'
 
 
-router.post('/user/new', middlewares.verifyToken, middlewares.checkRoles, middlewares.isAdmin, middlewares.checkNewUser, userController.createUser)
+router.post('/user/new', middlewares.verifyToken, middlewares.isAdmin, middlewares.checkNewUser, userController.createUser)
     .get('/user/get', middlewares.verifyToken, middlewares.isAdmin, userController.getAllUsers)
     .get('/user/get/:userId', middlewares.verifyToken, middlewares.isAdmin, userController.getUserById)
     .put('/user/update/:userId', middlewares.verifyToken, middlewares.isAdmin, userController.updateUserById)
