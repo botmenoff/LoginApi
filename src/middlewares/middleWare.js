@@ -102,28 +102,27 @@ const checkRoles = (req,res,next) => {
 }
 
 const checkNewUser = (req,res,next) => {
-    if (verifyUsername(req.body.name) == true && verifyEmail(req.body) == true && req.body.passwd === req.body.cpasswd && verifyPass(req.body.passwd) ) {
-        next()
-    } else {
-        res.status(404).send({"Error": "Verifica tus inputs"})
-    }
-}
-
-function verifyUsername(username) {
-    const regex = /^[a-zA-Z0-9]+$/
-    return regex.test(username)
-}
-
-function verifyEmail(email) {
-    const regex = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/
-    return regex.test(email)
-}
-
-function verifyPass(passwd) {
+    let name = req.body.name
+    let mail = req.body.mail
+    let passwd = req.body.passwd
+    let cpasswd = req.body.cpasswd
+    const schema=Joi.object({
+        name: Joi.string().required().alphanum().max(20).min(3),
+        mail: Joi.string().required().pattern(new RegExp('^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$')),
+        passwd: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
+        cpasswd: Joi.any().valid(Joi.ref('passwd')).required()
+    });
     
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
-    return regex.test(passwd)
+    const payload={
+        name,mail,passwd,cpasswd
+    };
+    
+    const { error, value } = schema.validate(payload);
+    if(error) {
+        res.json(error.message)
+    } else next();
 }
+
 
 const functions = {
     validateLogin,
