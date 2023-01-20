@@ -55,7 +55,7 @@ const sigIn = async (req,res) => {
             const token = jwt.sign({ id: userFound._id }, config.SECRET, {
             expiresIn: 86400, // 24 hours
         });
-        res.json({token})
+        res.json({token, "roles": userFound.roles})
         } else {
             return res.status(401).json({message: 'Incorrect password try again'})
         }
