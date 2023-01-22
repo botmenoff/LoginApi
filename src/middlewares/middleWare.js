@@ -128,7 +128,6 @@ const updatedUsers = (req,res,next) => {
     let name = req.body.name
     let mail = req.body.mail
     let passwd = req.body.passwd
-    let cpasswd = req.body.cpasswd
     const schema=Joi.object({
         name: Joi.string().optional().alphanum().max(20).min(3),
         mail: Joi.string().optional().pattern(new RegExp('^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$')),
@@ -136,7 +135,7 @@ const updatedUsers = (req,res,next) => {
     });
     
     const payload={
-        name,mail,passwd,cpasswd
+        name,mail,passwd
     };
     
     const { error, value } = schema.validate(payload);
