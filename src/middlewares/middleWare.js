@@ -130,10 +130,9 @@ const updatedUsers = (req,res,next) => {
     let passwd = req.body.passwd
     let cpasswd = req.body.cpasswd
     const schema=Joi.object({
-        name: Joi.string().alphanum().max(20).min(3),
-        mail: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$')),
-        passwd: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
-        cpasswd: Joi.any().valid(Joi.ref('passwd')).required()
+        name: Joi.string().optional().alphanum().max(20).min(3),
+        mail: Joi.string().optional().pattern(new RegExp('^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$')),
+        passwd: Joi.string().optional().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$'))
     });
     
     const payload={
