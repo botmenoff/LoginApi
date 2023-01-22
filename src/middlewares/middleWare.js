@@ -109,6 +109,29 @@ const checkNewUser = (req,res,next) => {
     const schema=Joi.object({
         name: Joi.string().required().alphanum().max(20).min(3),
         mail: Joi.string().required().pattern(new RegExp('^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$')),
+        passwd: Joi.string().required().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
+        cpasswd: Joi.any().required().valid(Joi.ref('passwd')).required()
+    });
+    
+    const payload={
+        name,mail,passwd,cpasswd
+    };
+    
+    const { error, value } = schema.validate(payload);
+    if(error) {
+        res.json(error.message)
+    } else next();
+}
+
+const updatedUsers = (req,res,next) => {
+    console.log(req.body);
+    let name = req.body.name
+    let mail = req.body.mail
+    let passwd = req.body.passwd
+    let cpasswd = req.body.cpasswd
+    const schema=Joi.object({
+        name: Joi.string().alphanum().max(20).min(3),
+        mail: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$')),
         passwd: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
         cpasswd: Joi.any().valid(Joi.ref('passwd')).required()
     });
@@ -130,7 +153,8 @@ const functions = {
     isModerator,
     isAdmin,
     checkRoles,
-    checkNewUser
+    checkNewUser,
+    updatedUsers
 }
 
 export default functions

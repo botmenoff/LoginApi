@@ -1,6 +1,7 @@
 import { Schema,model } from "mongoose";
 import bcrypt from "bcrypt";
 import mongoose from "mongoose";
+import { boolean } from "joi";
 
 const userSchema = new Schema({
 
