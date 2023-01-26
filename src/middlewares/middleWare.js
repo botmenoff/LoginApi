@@ -17,16 +17,13 @@ function validateLogin (req, res, next) {
         cpasswd: Joi.ref('passwd')
     });
     
-    /*
-        
-    */
     const payload={
         name,mail,passwd,cpasswd
     };
     
     const { error } = schema.validate(payload);
     if(error) {
-        res.json(error.message)
+        res.status(400).json(error.message)
     } else next();
 }
 
@@ -140,7 +137,7 @@ const updatedUsers = (req,res,next) => {
     
     const { error, value } = schema.validate(payload);
     if(error) {
-        res.json(error.message)
+        res.status(400).json(error.message)
     } else next();
 }
 
