@@ -48,25 +48,8 @@ const getUserById = async (req,res) => {
 const updateUserById = async (req,res) => {
     try {
         let cifredpasswd = "";
-        let data = req.body
-        let userInput = {}
-        if (data.name == "") {
-            
-        } else {
-            userInput["name"]=data.name
-        }
-        if (data.email == "") {
-            
-        } else {
-            userInput["mail"]=data.mail
-        }
-        if (data.passwd == "") {
-            
-        } else {
-            userInput["passwd"]=data.passwd
-
-        }
-        console.log(userInput)
+        let userInput = req.body
+        
         if (userInput.passwd === undefined) {
             const updateduser = await User.findByIdAndUpdate(req.params.userId, userInput, {
                 new: true

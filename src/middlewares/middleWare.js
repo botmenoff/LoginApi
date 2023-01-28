@@ -122,18 +122,34 @@ const checkNewUser = (req,res,next) => {
 
 const updatedUsers = (req,res,next) => {
     console.log(req.body);
-    let name = req.body.name
-    let mail = req.body.mail
-    let passwd = req.body.passwd
+    const data = req.body
+    // let name = req.body.name
+    // let mail = req.body.mail
+    // let passwd = req.body.passwd
+    let payload = {}
+    if (data.name == "") {
+            
+    } else {
+        payload["name"]=data.name
+    }
+    if (data.mail == "") {
+            
+    } else {
+        payload["mail"]=data.mail
+    }
+    if (data.passwd == "") {
+            
+    } else {
+        payload["passwd"]=data.passwd
+
+    }
+    console.log(payload)
     const schema=Joi.object({
         name: Joi.string().optional().alphanum().max(20).min(3),
         mail: Joi.string().optional().pattern(new RegExp('^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$')),
         passwd: Joi.string().optional().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$'))
     });
     
-    const payload={
-        name,mail,passwd
-    };
     
     const { error, value } = schema.validate(payload);
     if(error) {
