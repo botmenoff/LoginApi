@@ -112,7 +112,8 @@ const checkNewUser = (req,res,next) => {
     
     const payload={
         name,mail,passwd,cpasswd
-    };
+    }
+    
     console.log(payload)
     
     const { error, value } = schema.validate(payload);
