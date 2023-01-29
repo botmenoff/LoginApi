@@ -23,7 +23,6 @@ const createUser = async (req,res) => {
         const token = jwt.sign({id: userGuardado._id}, config.SECRET,{
         expiresIn: 86400 //24 horas
         })
-        console.log(userGuardado)
         res.status(200).json({token})
     } catch (error) {
         return res.status(500).json(error.message);
@@ -46,10 +45,27 @@ const getUserById = async (req,res) => {
 }
 
 const updateUserById = async (req,res) => {
+    console.log("PASA");
     try {
         let cifredpasswd = "";
-        let userInput = req.body
-        
+        let data = req.body
+        let userInput = {}
+        if (data.name == "") {
+
+        } else {
+            userInput["name"] = data.name
+        }
+        if (data.mail == "") {
+    
+        } else {
+            userInput["mail"] = data.mail
+        }
+        if (data.passwd == "") {
+    
+        } else {
+            userInput["passwd"] = data.passwd
+        }
+        console.log(userInput)
         if (userInput.passwd === undefined) {
             const updateduser = await User.findByIdAndUpdate(req.params.userId, userInput, {
                 new: true
