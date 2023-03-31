@@ -17,5 +17,5 @@ ADMIN
 
 
 USER
--Resetear Contraseña []
--Detectar si esta logeado con el token
+-Resetear Contraseña [Hacer]
+-Detectar si esta logeado con el token [X]

@@ -8,7 +8,7 @@ import { createRoles } from "./libs/inicio.js"
 // import connection from './database'
 import emailRoutes from './routes/mail.routes.js'
 
-import db from './database.js'
+import db from './db/database.js'
 db()
 const app = express();
 //Creamos los roles para que ya existan
